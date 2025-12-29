@@ -27,12 +27,13 @@ package com.github.caciocavallosilano.cacio.ctc;
 import java.awt.GraphicsDevice;
 
 import sun.java2d.SunGraphicsEnvironment;
-import sun.java2d.SurfaceManagerFactory;
 
 public class CTCGraphicsEnvironment extends SunGraphicsEnvironment {
 
     public CTCGraphicsEnvironment() {
-        SurfaceManagerFactory.setInstance(new CTCSurfaceManagerFactory());
+        // SurfaceManagerFactory was removed in Java 25
+        // CTCVolatileSurfaceManager was only used to disable acceleration,
+        // which is the default behavior for software rendering
     }
 
     @Override

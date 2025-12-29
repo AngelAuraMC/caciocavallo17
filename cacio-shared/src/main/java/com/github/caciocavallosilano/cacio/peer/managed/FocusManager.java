@@ -33,7 +33,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.github.caciocavallosilano.cacio.peer.CacioComponent;
-import sun.security.action.GetPropertyAction;
 
 public class FocusManager {
 
@@ -47,7 +46,9 @@ public class FocusManager {
      * FocusManager in case the property "cacio.focusmgr" has not been set.
      */
     static {
-	String focusMgrClsName = AccessController.doPrivileged(new GetPropertyAction("cacio.focusmgr"));
+	@SuppressWarnings("removal")
+	String focusMgrClsName = AccessController.doPrivileged(
+	    (java.security.PrivilegedAction<String>) () -> System.getProperty("cacio.focusmgr"));
 	Class cls = FocusManager.class;
 	try {
 	    if (focusMgrClsName != null) {
