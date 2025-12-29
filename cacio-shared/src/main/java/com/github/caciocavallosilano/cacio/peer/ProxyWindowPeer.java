@@ -322,6 +322,10 @@ class ProxyWindowPeer implements WindowPeer {
     }
 
     @Override
+    public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
+        return gc;
+    }
+
     public void repositionSecurityWarning() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
