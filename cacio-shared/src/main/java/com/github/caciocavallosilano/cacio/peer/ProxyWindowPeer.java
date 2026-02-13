@@ -321,7 +321,7 @@ class ProxyWindowPeer implements WindowPeer {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    @Override
+    // @Override Added to WindowPeer in Java 25
     public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
         return gc;
     }

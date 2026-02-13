@@ -331,7 +331,7 @@ class CacioWindowPeer extends CacioContainerPeer<Window, JRootPane>
         // TODO: Implement.
     }
 
-    @Override
+    // @Override Added to WindowPeer in Java 25
     public GraphicsConfiguration getAppropriateGraphicsConfiguration(GraphicsConfiguration gc) {
         return gc;
     }
