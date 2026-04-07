@@ -56,11 +56,6 @@ public class CTCPreloadAgent {
             defaultHeadlessField.set(null, Boolean.FALSE);
             headlessField.set(null,Boolean.FALSE);
 
-            Class<?> smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
-            Field smf = smfCls.getDeclaredField("instance");
-            smf.setAccessible(true);
-            smf.set(null, null);
-
             setFinalStatic(ge, new CTCGraphicsEnvironment());
 
             String propertyFontManager = System.getProperty("cacio.font.fontmanager");
