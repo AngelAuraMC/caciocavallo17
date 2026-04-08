@@ -72,11 +72,6 @@ public class CacioTestRunner extends BlockJUnit4ClassRunner {
 
             makeNonFinal(ge);
 
-            Class<?> smfCls = Class.forName("sun.java2d.SurfaceManagerFactory");
-            Field smf = smfCls.getDeclaredField("instance");
-            smf.setAccessible(true);
-            smf.set(null, null);
-
             ge.set(null, new CTCGraphicsEnvironment());
         } catch (Exception e) {
             e.printStackTrace();
